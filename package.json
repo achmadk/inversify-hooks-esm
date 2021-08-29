@@ -40,7 +40,8 @@
     "printWidth": 80,
     "semi": true,
     "singleQuote": true,
-    "trailingComma": "es5"
+    "trailingComma": "es5",
+    "endOfLine": "auto"
   },
   "name": "inversify-hooks-esm",
   "author": "Achmad Kurnianto",
