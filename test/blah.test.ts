@@ -20,7 +20,7 @@ describe('blah', () => {
 
     class OtherDummy implements IOtherDummy {
       // @ts-ignore
-      @inject()private _dummy!: IDummy;
+      @inject() private _dummy!: IDummy;
 
       public test(): string {
         return this._dummy.example();
