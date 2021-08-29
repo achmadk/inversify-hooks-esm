@@ -27,9 +27,9 @@
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
-    "inversify-esm": "0.1.0",
-    "inversify-props-esm": "0.1.1",
-    "reflect-metadata": "0.1.13"
+    "@abraham/reflection": "0.8.0",
+    "inversify-esm": "1.0.0",
+    "inversify-props-esm": "1.0.0"
   },
   "husky": {
     "hooks": {
@@ -52,24 +52,37 @@
   "size-limit": [
     {
       "path": "dist/inversify-hooks-esm.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "512 B"
     },
     {
       "path": "dist/inversify-hooks-esm.esm.js",
-      "limit": "10 KB"
+      "limit": "512 B"
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^4.9.2",
+    "@abraham/reflection": "0.8.0",
+    "@size-limit/preset-small-lib": "^5.0.3",
     "@skypack/package-check": "0.2.2",
+    "@typescript-eslint/eslint-plugin": "4.29.3",
+    "@typescript-eslint/parser": "4.29.3",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-config-react-app": "6.0.0",
+    "eslint-plugin-flowtype": "5.9.1",
+    "eslint-plugin-import": "2.24.2",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.4.1",
+    "eslint-plugin-react": "7.25.0",
+    "eslint-plugin-react-hooks": "4.2.0",
     "husky": "^5.0.9",
-    "inversify-esm": "0.1.0",
-    "inversify-props-esm": "0.1.1",
-    "reflect-metadata": "0.1.13",
-    "size-limit": "^4.9.2",
+    "inversify-esm": "1.0.0",
+    "inversify-props-esm": "1.0.0",
+    "prettier": "2.3.2",
+    "size-limit": "^5.0.3",
     "tsdx": "^0.14.1",
-    "tslib": "^2.1.0",
-    "typescript": "^4.1.5"
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.2"
   },
   "keywords": [
     "inversify",
@@ -80,5 +93,6 @@
     "react inject",
     "react hooks",
     "es module support"
-  ]
+  ],
+  "packageManager": "yarn@3.0.1"
 }
