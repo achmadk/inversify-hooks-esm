@@ -1,5 +1,3 @@
-import 'reflect-metadata';
-
 import { useInject, container, inject, cid, resetContainer } from '../src';
 
 describe('blah', () => {
@@ -21,6 +19,7 @@ describe('blah', () => {
     }
 
     class OtherDummy implements IOtherDummy {
+      // @ts-ignore
       @inject() private _dummy!: IDummy;
 
       public test(): string {
