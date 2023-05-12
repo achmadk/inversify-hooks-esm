@@ -1,7 +1,8 @@
 {
-  "version": "1.0.0",
+  "version": "2.1.2",
   "license": "MIT",
   "main": "dist/index.js",
+  "type": "module",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
@@ -9,27 +10,30 @@
   "sideEffects": false,
   "exports": {
     ".": {
+      "node": "./dist/inversify-hooks-esm.esm.js",
       "import": "./dist/inversify-hooks-esm.esm.js",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "prepublishOnly": "tsdx build",
+    "start": "dts watch",
+    "build": "dts build",
+    "test": "dts test",
+    "lint": "dts lint --fix",
+    "prepare": "dts build",
+    "prepublishOnly": "dts build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
-    "@abraham/reflection": "0.8.0",
-    "inversify-esm": "1.0.0",
-    "inversify-props-esm": "1.0.0"
+    "@abraham/reflection": "0.10.0",
+    "inversify-esm": "2.0.2",
+    "inversify-props-esm": "2.0.2",
+    "react": "17.x || 18.x"
   },
   "husky": {
     "hooks": {
@@ -53,37 +57,45 @@
   "size-limit": [
     {
       "path": "dist/inversify-hooks-esm.cjs.production.min.js",
-      "limit": "512 B"
+      "limit": "350 B"
     },
     {
       "path": "dist/inversify-hooks-esm.esm.js",
-      "limit": "512 B"
+      "limit": "50 B"
     }
   ],
   "devDependencies": {
-    "@abraham/reflection": "0.8.0",
-    "@size-limit/preset-small-lib": "^5.0.3",
+    "@abraham/reflection": "0.10.0",
+    "@size-limit/preset-small-lib": "^8.1.0",
+    "@size-limit/webpack": "8.1.0",
+    "@size-limit/webpack-why": "8.1.0",
     "@skypack/package-check": "0.2.2",
-    "@typescript-eslint/eslint-plugin": "4.29.3",
-    "@typescript-eslint/parser": "4.29.3",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@types/react": "18.0.20",
+    "@typescript-eslint/eslint-plugin": "5.37.0",
+    "@typescript-eslint/parser": "5.37.0",
     "babel-eslint": "10.1.0",
-    "eslint": "7.32.0",
-    "eslint-config-prettier": "7.2.0",
-    "eslint-config-react-app": "6.0.0",
-    "eslint-plugin-flowtype": "5.9.1",
-    "eslint-plugin-import": "2.24.2",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-prettier": "3.4.1",
-    "eslint-plugin-react": "7.25.0",
-    "eslint-plugin-react-hooks": "4.2.0",
+    "dts-cli": "1.6.0",
+    "eslint": "8.23.1",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-plugin-flowtype": "8.0.3",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.31.8",
+    "eslint-plugin-react-hooks": "4.6.0",
     "husky": "^5.0.9",
-    "inversify-esm": "1.0.0",
-    "inversify-props-esm": "1.0.0",
-    "prettier": "2.3.2",
-    "size-limit": "^5.0.3",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.3.1",
-    "typescript": "^4.4.2"
+    "inversify-esm": "2.0.2",
+    "inversify-props-esm": "2.0.2",
+    "prettier": "2.7.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "size-limit": "^8.1.0",
+    "ts-jest": "29.0.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.3"
   },
   "keywords": [
     "inversify",
@@ -95,5 +107,5 @@
     "react hooks",
     "es module support"
   ],
-  "packageManager": "yarn@3.0.1"
+  "packageManager": "yarn@3.5.1"
 }
